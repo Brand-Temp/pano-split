@@ -11,6 +11,6 @@ pano = cv2.imread(sys.argv[1])
 pano_height, pano_width, _ = pano.shape
 num_splits = int(sys.argv[2])
 split_width = int(pano_width/num_splits)
-splits = np.split(pano,3,1)
+splits = np.array_split(pano,3,1)
 for i in range(num_splits):
     cv2.imwrite('split_%d.jpg'%i, splits[i])
